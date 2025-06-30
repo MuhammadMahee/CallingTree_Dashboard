@@ -39,4 +39,4 @@ def get_Calling_Tree():
  
 print("Calling Tree DataFrame:")
 calling_tree_df = get_Calling_Tree()    
-st.write(calling_tree_df, hideindex=True)
+st.dataframe(calling_tree_df, use_container_width=True, hide_index=True)
