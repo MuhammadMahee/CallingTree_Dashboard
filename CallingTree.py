@@ -39,7 +39,7 @@ def get_Calling_Tree():
  
 print("Calling Tree DataFrame:")
 calling_tree_df = get_Calling_Tree()    
-st.container():
+with st.container():
     st.markdown(
         """
         <div style='
