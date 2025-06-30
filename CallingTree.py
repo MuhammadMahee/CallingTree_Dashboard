@@ -41,18 +41,21 @@ print("Calling Tree DataFrame:")
 calling_tree_df = get_Calling_Tree()    
 # Render DataFrame inside a scrollable container
 with st.container():
-    st.markdown(
-        """
-        <div style='height: 500px; overflow-y: auto;'>
-        """,
-        unsafe_allow_html=True
-    )
 
-    st.dataframe(calling_tree_df , use_container_width=True, hide_index=True)
 
-    st.markdown(
-        """
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+st.markdown(
+    """
+    <style>
+    .full-height-df {
+        height: 85vh; /* Adjust as needed */
+        overflow-y: auto;
+    }
+    </style>
+    <div class="full-height-df">
+    """,
+    unsafe_allow_html=True
+)
+
+st.dataframe(calling_tree_df, use_container_width=True, hide_index=True)
+
+st.markdown("</div>", unsafe_allow_html=True)
