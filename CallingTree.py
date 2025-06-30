@@ -41,6 +41,32 @@ print("Calling Tree DataFrame:")
 calling_tree_df = get_Calling_Tree()    
 # Render DataFrame inside a scrollable container
 with st.container():
+    st.markdown("""
+        <style>
+            .full-height-container {
+                height: 100vh;
+                overflow: auto;
+            }
     
-    st.data_editor(calling_tree_df, use_container_width=True, hide_index=True, height=800vh)
+            .element-container .stDataFrame {
+                height: 100% !important;
+                min-height: 100vh !important;
+            }
+    
+            .block-container {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+        </style>
+        <script>
+            window.addEventListener('load', function () {
+                let container = parent.document.querySelector('.element-container');
+                if (container) {
+                    container.style.height = '100vh';
+                }
+            });
+        </script>
+    """, unsafe_allow_html=True)
+    
+    st.data_editor(calling_tree_df, use_container_width=True, hide_index=True)
     
