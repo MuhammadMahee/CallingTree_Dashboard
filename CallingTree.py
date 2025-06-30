@@ -39,22 +39,20 @@ def get_Calling_Tree():
  
 print("Calling Tree DataFrame:")
 calling_tree_df = get_Calling_Tree()    
+# Render DataFrame inside a scrollable container
 with st.container():
     st.markdown(
         """
-        <div style='
-            background-color: #f0f2f6;
-            padding: 2rem;
-            height: 500px;
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        '>
-            <h3 style='color: #333;'>Custom Sized Container</h3>
-            <p>This container has a fixed height of 500px and takes full width.</p>
-        </div>
+        <div style='height: 500px; overflow-y: auto;'>
         """,
         unsafe_allow_html=True
     )
 
-    st.dataframe(calling_tree_df, use_container_width=True, hide_index=True)
+    st.dataframe(df, use_container_width=True, hide_index=True)
+
+    st.markdown(
+        """
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
