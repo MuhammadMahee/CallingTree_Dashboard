@@ -42,5 +42,5 @@ calling_tree_df = get_Calling_Tree()
 # Render DataFrame inside a scrollable container
 with st.container():
     
-    st.data_editor(calling_tree_df, use_container_width=True, hide_index=True)
+    st.data_editor(calling_tree_df, use_container_width=True, hide_index=True, height=800)
     
