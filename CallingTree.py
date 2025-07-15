@@ -12,7 +12,7 @@ st.set_page_config(page_title="Calling Tree Login", layout="wide")
 
 # --- Login Credentials (Hardcoded) ---
 USERNAME = "Backoffice"
-PASSWORD = "xticallingtree"
+PASSWORD = "3vhM-KCsl-p1"
 
 # --- Session State Initialization ---
 if "logged_in" not in st.session_state:
