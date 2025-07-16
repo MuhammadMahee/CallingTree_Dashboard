@@ -14,6 +14,8 @@ st.set_page_config(page_title="Calling Tree Login", layout="wide")
 USERNAME = "Backoffice"
 PASSWORD = "3vhM-KCsl-p1"
 
+
+
 # --- Session State Initialization ---
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
@@ -21,8 +23,9 @@ if "logged_in" not in st.session_state:
 # --- Login Page Function ---
 def login_page():
     st.title("🔐 Calling Tree Login")
-    username = st.text_input("Username")
-    password = st.text_input("Password", type="password")
+    username = st.text_input("Username").replace(" ", "")
+    password = st.text_input("Password", type="password").replace(" ", "")
+    
     if st.button("Login"):
         if username == USERNAME and password == PASSWORD:
             st.session_state.logged_in = True
