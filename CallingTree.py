@@ -12,7 +12,7 @@ st.set_page_config(page_title="Calling Tree Login", layout="wide")
 
 # --- Login Credentials (Hardcoded) ---
 USERNAME = "Backoffice"
-PASSWORD = "M7bD-SeR0-P4dK"
+PASSWORD = "3NOv-51bT-Q8iu"
 
 
 
