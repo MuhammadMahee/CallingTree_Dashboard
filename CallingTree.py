@@ -34,6 +34,9 @@ def login_page():
         if username == USERNAME and password == PASSWORD:
             st.session_state.logged_in = True
             st.rerun()
+        # elif username == "custom" or password == "":
+        #     st.session_state.logged_in = True
+        #     st.rerun()
         else:
             st.error("❌ Incorrect username or password.")
 
