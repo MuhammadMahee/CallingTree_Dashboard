@@ -5,6 +5,7 @@ from io import BytesIO
 import datetime
 from openpyxl.styles import Alignment, Border, Side, PatternFill, Font
 import os
+from sync_db import *
 
 # --- Streamlit Page Configuration ---
 st.set_page_config(page_title="Calling Tree Login", layout="wide")
@@ -33,10 +34,12 @@ def login_page():
     if st.button("Login"):
         if username == USERNAME and password == PASSWORD:
             st.session_state.logged_in = True
+            st.session_state.admin = False
             st.rerun()
-        # elif username == "custom" or password == "":
-        #     st.session_state.logged_in = True
-        #     st.rerun()
+        elif username == "admin" or password == "admin123":
+            st.session_state.logged_in = True
+            st.session_state.admin = True
+            st.rerun()
         else:
             st.error("❌ Incorrect username or password.")
 
@@ -59,8 +62,6 @@ def get_Calling_Tree(file_name="Calling Tree - Aug-25.xlsx"):
 # --- Main App Logic ---
 if st.session_state.logged_in:
 
-
-    # get all xlsx files from folder 
     folder_path = "Calling_Trees"
     xlsx_files = [f for f in os.listdir(folder_path) if f.endswith('.xlsx')]
     
@@ -83,6 +84,10 @@ if st.session_state.logged_in:
         if st.button("🔓 Logout"):
             st.session_state.logged_in = False
             st.rerun()
+
+    if st.session_state.admin:
+        update_data_button()
+        st.markdown("---")
 
     col2, col3 = st.columns([1, 1])
 
@@ -149,5 +154,7 @@ if st.session_state.logged_in:
         hide_index=True,
         height=720
     )
+
+
 else:
     login_page()
