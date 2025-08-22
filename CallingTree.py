@@ -5,7 +5,7 @@ from io import BytesIO
 import datetime
 from openpyxl.styles import Alignment, Border, Side, PatternFill, Font
 import os
-from sync_db import *
+# from sync_db import *
 
 # --- Streamlit Page Configuration ---
 st.set_page_config(page_title="Calling Tree Login", layout="wide")
@@ -34,6 +34,7 @@ def login_page():
     if st.button("Login"):
         if username == USERNAME and password == PASSWORD:
             st.session_state.logged_in = True
+
             st.session_state.admin = False
             st.rerun()
         elif username == "admin" or password == "admin123":
@@ -85,9 +86,9 @@ if st.session_state.logged_in:
             st.session_state.logged_in = False
             st.rerun()
 
-    if st.session_state.admin:
-        update_data_button()
-        st.markdown("---")
+    # if st.session_state.admin:
+    #     update_data_button()
+    #     st.markdown("---")
 
     col2, col3 = st.columns([1, 1])
 
