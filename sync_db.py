@@ -8,7 +8,7 @@ from io import BytesIO
 # MySQL Connection
 def get_connection():
     return mysql.connector.connect(
-        host='192.168.100.13',
+        host='localhost',
         user='Mahee',
         password='Muhammadmahee123.',
         database='callingtree'
