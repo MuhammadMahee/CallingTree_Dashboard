@@ -142,7 +142,7 @@ if st.session_state.logged_in:
             data=output,
             file_name=filename,
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-            use_container_width=True
+            width='stretch'
         )
 
 
@@ -151,7 +151,7 @@ if st.session_state.logged_in:
     # Display the editable DataFrame
     st.data_editor(
         calling_tree_df,
-        use_container_width=True,
+        width='stretch',
         hide_index=True,
         height=720
     )
