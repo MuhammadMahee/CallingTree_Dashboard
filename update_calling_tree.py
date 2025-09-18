@@ -74,7 +74,7 @@ def create_ntids_table():
     cursor.execute("""
         CREATE TABLE ntids (
             NTID VARCHAR(20) PRIMARY KEY,
-            Name VARCHAR(255),
+            Name VARCHAR(255),  
             DESIGNATION VARCHAR(50)
         );
     """)
