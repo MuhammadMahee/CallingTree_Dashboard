@@ -3,4 +3,4 @@ primaryColor = "#9B30FF"               # Medium Purple (for buttons, highlights)
 backgroundColor = "#1A0033"            # Very dark purple background
 secondaryBackgroundColor = "#4B0082"   # Indigo-ish (for sidebar or secondary areas)
 textColor = "#E0B0FF"                  # Light lavender text for readability
-font = "sans serif"
+font = "Calibri"
